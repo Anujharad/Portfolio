@@ -22,7 +22,7 @@ export const Navbar = () => {
              <a href="#Projects">
             <li className=" text-md transition-all duration-300 p-1 md:p-0 ">Projects</li>
             </a>
-            <a href="Contact"> 
+            <a href="#Footer"> 
             <li className=" text-md transition-all duration-300 p-1 md:p-0 ">Contact</li>
             </a>
         </ul>

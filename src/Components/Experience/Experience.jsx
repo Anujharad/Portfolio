@@ -5,7 +5,7 @@ import prodigy from '../../assets/prodigy.png';
 
 const Experience = () => {
   return (
-    <div className='p-10 md:p-24  px-10'>
+    <div id="Experience" className='p-10 md:p-24  px-10'>
        <h1 className='text-white text-2xl md:text-4xl font-bold px-12 py-8 '>Experience</h1>
      <div className='md:flex flex-wrap items-center justify-around'>
        <div className='flex flex-wrap gap-8 md:w-2/5 md:p-12 py-10'>
