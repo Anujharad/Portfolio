@@ -11,21 +11,22 @@ const Footer = () => {
          <h4 className='text-sm md:text-2xl font-normal'>Feel Free To Reach Out!</h4>
         
       </div>
-      <div className=' text-sm md:text-xl'>
-        <div className='flex  gap-1 items-center'>
+        
+      <ul className="text-sm md:text-xl">
+        <li className="flex gap-1 items-center">
           <MdOutlineEmail size={20} />
           fullstackdevanuj@gmail.com
-        </div>
-        
-        <div className='flex  gap-1 items-center'>
-          <CiLinkedin size={20} />
-          anujharad
-        </div>
-        <div className='flex  gap-1 items-center'>
-          <FaGithub size={20} />
-          anujharad
-        </div>
-      </div>
+        </li>
+        <li className="flex gap-1 items-center">
+          <CiLinkedin />
+          https://www.linkedin.com/in/devanuj1
+        </li>
+        <li className="flex gap-1 items-center">
+          <FaGithub />
+          https://github.com/Anujharad
+        </li>
+      </ul>
+      
 
 
      </div>
