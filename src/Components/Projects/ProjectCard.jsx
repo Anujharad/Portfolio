@@ -1,6 +1,6 @@
 import React from 'react'
-import bannerImg from '../../assets/photo-C8q0KQHG.webp'
-const ProjectCard = ({title,description}) => {
+
+const ProjectCard = ({title,description,bannerImg}) => {
   return (
     <div className='bg-black w-80 flex flex-col justify-center p-3 md:p-4 bg-opacity-40 shadow-xl rounded-2xl shadow-slate-900 p-3 text-white '>
         <img className='p-4' src={bannerImg} alt="" />
