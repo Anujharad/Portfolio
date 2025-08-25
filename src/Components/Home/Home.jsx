@@ -12,9 +12,9 @@ const Home = () => {
         Aspiring and dedicated Full Stack Developer with hands-on experience in building responsive, secure, and scalable web applications using the MERN stack. Proficient in both front-end and back-end development with strong problem-solving skills and a passion for clean, efficient code.
       
       </p>  
-       
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fullstackdevanuj@gmail.com" target="_blank" rel="noopener noreferrer">
     <button className='mt-5 md:mt-10 py-2 px-3 text-sm md:text-lg md:py-2 md:px-2 hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-3xl bg-slate-500'>Contact Me</button>
-     
+     </a>
     
  </div> 
  <div>
