@@ -1,41 +1,29 @@
-import React from 'react'
-import { MdOutlineEmail} from 'react-icons/md';
-import { CiLinkedin} from 'react-icons/ci';
-import { FaGithub } from 'react-icons/fa';
+import { ArrowUp } from "lucide-react";
+import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
+import { personal } from "../../data/personal";
 
-const Footer = () => {
-  return (
-     <div id="Footer" className='bg-slate-700 text-white flex flex-col-2 justify-around p-10 md:p-12 items-center '>
-      <div className=' '>
-          <h1 className='text-2xl md:text-6xl font-bold '>Contact Me</h1>
-         <h4 className='text-sm md:text-2xl font-normal'>Feel Free To Reach Out!</h4>
-        
+const Footer = () => (
+  <footer className="relative border-t border-white/5 px-6 md:px-12 lg:px-16 py-12">
+    <div className="max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div>
+          <h3 className="text-lg font-bold text-white tracking-tightest">ANUJ HARAD</h3>
+          <p className="text-sm text-gray-500 mt-1">Software Engineering Graduate · Full Stack Developer</p>
+        </div>
+        <div className="flex items-center gap-5">
+          <a href={personal.github} target="_blank" rel="noopener noreferrer" data-cursor="GITHUB" className="text-gray-500 hover:text-white transition-colors" aria-label="GitHub"><FaGithub size={20} /></a>
+          <a href={personal.linkedin} target="_blank" rel="noopener noreferrer" data-cursor="" className="text-gray-500 hover:text-white transition-colors" aria-label="LinkedIn"><FaLinkedinIn size={20} /></a>
+          <a href={`mailto:${personal.email}`} data-cursor="" className="text-gray-500 hover:text-white transition-colors" aria-label="Email"><FaEnvelope size={20} /></a>
+          <a href="#Home" data-cursor="" className="flex items-center gap-1 text-xs font-mono text-gray-500 hover:text-white transition-colors ml-2">
+            Back to top <ArrowUp size={14} />
+          </a>
+        </div>
       </div>
-        
-      <ul className="text-sm  md:text-xl">
-        <li className="flex gap-1 items-center">
-          <MdOutlineEmail size={20} />
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fullstackdevanuj@gmail.com" target="_blank" rel="noopener noreferrer">
-          fullstackdevanuj@gmail.com
-          </a>
-        </li>
-        <li className="flex gap-1 items-center">
-          <CiLinkedin />
-          <a href="https://www.linkedin.com/in/devanuj1" target="_blank" rel="noopener noreferrer">
-          https://www.linkedin.com/in/devanuj1
-          </a>
-        </li>
-        <li className="flex gap-1 items-center">
-          <FaGithub /><a href="https://github.com/Anujharad" target="_blank" rel="noopener noreferrer">
-          https://github.com/Anujharad
-          </a>
-        </li>
-      </ul>
-      
+      <div className="mt-8 pt-8 border-t border-white/5">
+        <p className="text-xs font-mono text-gray-600">© 2026 Anuj Harad</p>
+      </div>
+    </div>
+  </footer>
+);
 
-
-     </div>
-  )
-}
-
-export default Footer
+export default Footer;

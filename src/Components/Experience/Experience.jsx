@@ -1,61 +1,63 @@
-import React from 'react'
-import { FaHtml5, FaCss3, FaReact, FaJs } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiExpress, SiNodedotjs } from 'react-icons/si';
-import prodigy from '../../assets/prodigy.png';
+import { motion } from "motion/react";
+import { TechIcon } from "../../lib/icons";
+import { experience } from "../../data/experience";
+import { fadeUp } from "../../lib/animations";
 
-const Experience = () => {
-  return (
-    <div id="Experience" className='p-10 md:p-24  px-10'>
-       <h1 className='text-white text-2xl md:text-4xl font-bold px-12 py-8 '>Experience</h1>
-     <div className='md:flex flex-wrap items-center justify-around'>
-       <div className='flex flex-wrap gap-8 md:w-2/5 md:p-12 py-10'>
-        <div className='p-3 bg-black flex rounded-2xl items-center'>
-        <FaHtml5 color={"red"} size={50}></FaHtml5>
-        </div>
-        <div className='p-3 bg-black flex rounded-2xl items-center'>
-        <FaCss3 className='text-blue-600' size={50}></FaCss3>
-       </div>
-       <div className='p-3 bg-black flex rounded-2xl items-center'>
-        <FaJs color={"yellow"} size={50}></FaJs>
-       </div>
-       <div className='p-3 bg-black flex rounded-2xl items-center'>
-        <FaReact className='text-blue-400' size={50}></FaReact>
-       </div>
-       <div className='p-3 bg-black flex rounded-2xl items-center'>
-        <SiMongodb color={"green"} size={50}></SiMongodb>
-       </div>
-       <div className='p-3 bg-black flex rounded-2xl items-center'>
-        <SiExpress className="text-yellow-600" size={50}></SiExpress>
-       </div>
-       <div className='p-3 bg-black rounded-2xl items-center'>
-        <SiNodedotjs color={"green"} size={50}></SiNodedotjs>
-       </div>
-       <div className='p-3 bg-black rounded-2xl items-center'>
-        <SiTailwindcss className='text-blue-500' size={50}></SiTailwindcss>
-       </div>
-       </div>
-     <div >
-           <div className=' flex  gap-4 bg-black bg-opacity-40 rounded-lg text-white px-1 items-center'>
-            <div className=' px-3 pl-4'>
-            <img className='w-20 h-20 ' src={prodigy} alt='' size={20}></img>
+const Experience = () => (
+  <section id="Experience" className="relative px-6 md:px-12 lg:px-16 py-20 md:py-32 bg-base-800/30">
+    <div className="max-w-7xl mx-auto">
+      <div className="flex items-center gap-3 mb-12">
+        <span className="text-xs font-mono text-accent">02 / EXPERIENCE</span>
+        <span className="flex-1 h-[1px] bg-white/5" />
+      </div>
+      <motion.h2 {...fadeUp} className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tightest mb-12">
+        Where I&apos;ve worked.
+      </motion.h2>
+      <div className="space-y-8">
+        {experience.map((exp) => (
+          <motion.div
+            key={exp.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="grid md:grid-cols-[60px_1fr] gap-4 md:gap-8"
+          >
+            <div className="flex md:flex-col items-center md:items-start gap-4">
+              <span className="text-3xl md:text-5xl font-bold text-base-500 tracking-tightest">{exp.id}</span>
+              <div className="hidden md:block w-[1px] flex-1 bg-gradient-to-b from-base-500 to-transparent min-h-[200px]" />
             </div>
-            <div className='p-2 px-6'>
-
-              <h1 className='font-bold text-2xl'>Prodigy Infotech</h1>
-              <p className='text-sm font-thin'>Feb 2024 - Apr 2024</p>
-              <div className='p-2 text-sm font-thin'>
-              <ul>
-                <li>- Work as Web Developer</li>
-                <li>- Student Intern</li>
+            <div className="pb-8">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                <h3 className="text-xl md:text-2xl font-bold text-white">{exp.role}</h3>
+                <span className="text-gray-500">—</span>
+                <span className="text-lg md:text-xl text-accent-light font-medium">{exp.company}</span>
+              </div>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 mb-4 text-sm font-mono text-gray-500">
+                <span>{exp.location}</span><span>·</span><span>{exp.duration}</span>
+              </div>
+              <p className="text-base text-gray-400 leading-relaxed mb-5 max-w-2xl">{exp.summary}</p>
+              <ul className="space-y-2 mb-6 max-w-2xl">
+                {exp.bullets.map((bullet, i) => (
+                  <li key={i} className="flex gap-3 text-sm text-gray-400 leading-relaxed">
+                    <span className="text-accent mt-1.5 flex-shrink-0">▹</span><span>{bullet}</span>
+                  </li>
+                ))}
               </ul>
-              </div> 
+              <div className="flex flex-wrap gap-2">
+                {exp.tech.map((t) => (
+                  <span key={t} data-cursor="" className="group flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-base-700/40 text-xs font-mono text-gray-400 hover:border-accent/30 hover:text-white transition-all">
+                    <TechIcon name={t} size={14} className="text-gray-500 group-hover:text-accent-light transition-colors" />
+                    {t === "nodedotjs" ? "Node.js" : t === "tailwindcss" ? "Tailwind CSS" : t.charAt(0).toUpperCase() + t.slice(1)}
+                  </span>
+                ))}
+              </div>
             </div>
-           </div>
-     </div>
-      
-     </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
-  )
-}
+  </section>
+);
 
 export default Experience;
