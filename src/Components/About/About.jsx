@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { MapPin, GraduationCap, Layers, Cloud, CheckCircle2 } from "lucide-react";
+import { MapPin, GraduationCap, Layers, Cloud, CircleCheck as CheckCircle2 } from "lucide-react";
 import { fadeUp, stagger, staggerItem } from "../../lib/animations";
 
 const facts = [
